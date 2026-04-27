@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern Arena | Canadian Gaming Hub</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="aurora-loader" id="auroraLoader">
+        <div class="loader-content">
+            <div class="aurora-text">NORTHERN ARENA</div>
+            <div class="aurora-sub">loading your gaming zone...</div>
+            <div class="aurora-progress">
+                <div class="aurora-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOCKEY BAR -->
+    <div class="hockey-bar">
+        <div class="penalty-box">
+            <span class="penalty-label">POWER PLAY</span>
+            <span class="penalty-time" id="powerPlayTimer">02:34</span>
+        </div>
+        <div class="scoreboard">
+            <div class="team team-home">
+                <span class="team-name">NORTH</span>
+                <span class="team-score" id="northScore">2,847</span>
+            </div>
+            <div class="vs-divider">VS</div>
+            <div class="team team-away">
+                <span class="team-name">SOUTH</span>
+                <span class="team-score" id="southScore">2,156</span>
+            </div>
+        </div>
+        <div class="maple-leaf-icon">
+            <span class="leaf-animate">🍁</span>
+        </div>
+    </div>
+
+    <!-- LEVEL SYSTEM -->
+    <div class="level-system">
+        <div class="level-icon">
+            <span class="level-number" id="userLevel">7</span>
+            <span class="level-badge">RANGER</span>
+        </div>
+        <div class="level-progress-container">
+            <div class="level-progress-label">
+                <span>🏆 XP TO NEXT LEVEL</span>
+                <span id="xpCurrent">1,280</span>
+                <span>/</span>
+                <span id="xpNext">2,500</span>
+            </div>
+            <div class="level-progress-bar">
+                <div class="level-progress-fill" style="width: 51%"></div>
+            </div>
+        </div>
+        <div class="maple-pass-icon">
+            <span>🍁 MAPLE PASS</span>
+            <span class="pass-tier" id="passTier">GOLD</span>
+        </div>
+    </div>
+
+    <!-- COMPASS NAVIGATION -->
+    <div class="compass-nav">
+        <div class="compass-item active" data-tab="raid">
+            <div class="compass-icon">⚔️</div>
+            <span>RAID</span>
+        </div>
+        <div class="compass-item" data-tab="hockey">
+            <div class="compass-icon">🏒</div>
+            <span>HOCKEY</span>
+        </div>
+        <div class="compass-item" data-tab="aurora">
+            <div class="compass-icon">✨</div>
+            <span>AURORA</span>
+        </div>
+        <div class="compass-item" data-tab="lodge">
+            <div class="compass-icon">🏔️</div>
+            <span>LODGE</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- RAID TAB -->
+        <div class="tab-content active" id="raid-tab">
+            <div class="raid-boss-container">
+                <div class="raid-boss-card">
+                    <div class="boss-pixel-art">🐉</div>
+                    <div class="boss-title">NORTHERN WYVERN</div>
+                    <div class="boss-health-bar">
+                        <div class="boss-health-label">
+                            <span>🔥 HEALTH POOL</span>
+                            <span id="bossHealthPercent">87%</span>
+                        </div>
+                        <div class="boss-health-progress">
+                            <div class="boss-health-fill" style="width: 87%" id="bossHealthFill"></div>
+                        </div>
+                    </div>
+                    <button class="attack-button" id="attackBossBtn">⚡ DEAL DAMAGE ⚡</button>
+                </div>
+                <div class="active-buffs">
+                    <div class="buff-item">
+                        <div class="buff-icon">⚡</div>
+                        <div>DOUBLE DAMAGE</div>
+                        <div class="buff-timer" id="doubleDamageTimer">2h 14m</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOCKEY TAB -->
+        <div class="tab-content" id="hockey-tab">
+            <div class="matchups-grid">
+                <div class="matchup-card">
+                    <div class="matchup-teams">
+                        <div class="matchup-team">🏒 VANCOUVER</div>
+                        <div class="matchup-vs">VS</div>
+                        <div class="matchup-team">🏒 CALGARY</div>
+                    </div>
+                    <button class="matchup-bet-btn" data-match="VANvsCGY">🎮 SUPPORT TEAM</button>
+                </div>
+                <div class="matchup-card">
+                    <div class="matchup-teams">
+                        <div class="matchup-team">🏒 TORONTO</div>
+                        <div class="matchup-vs">VS</div>
+                        <div class="matchup-team">🏒 MONTREAL</div>
+                    </div>
+                    <button class="matchup-bet-btn" data-match="TORvsMTL">🎮 SUPPORT TEAM</button>
+                </div>
+                <div class="matchup-card featured">
+                    <div class="matchup-teams">
+                        <div class="matchup-team">🏒 OTTAWA</div>
+                        <div class="matchup-vs">VS</div>
+                        <div class="matchup-team">🏒 EDMONTON</div>
+                    </div>
+                    <button class="matchup-bet-btn" data-match="OTTvsEDM">🎮 SUPPORT TEAM</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AURORA TAB -->
+        <div class="tab-content" id="aurora-tab">
+            <div class="game-arcade" id="gameArcade">
+                <div class="arcade-card" data-category="hot">
+                    <div class="arcade-icon">🎮</div>
+                    <div class="arcade-name">Maple Quest</div>
+                    <div class="arcade-stats">
+                        <span>👥 2,341</span>
+                        <span>💎 +45</span>
+                    </div>
+                    <button class="arcade-play" data-game="Maple Quest">▶ PLAY</button>
+                </div>
+                <div class="arcade-card" data-category="hot">
+                    <div class="arcade-icon">🏒</div>
+                    <div class="arcade-name">Hockey Rumble</div>
+                    <div class="arcade-stats">
+                        <span>👥 1,892</span>
+                        <span>💎 +60</span>
+                    </div>
+                    <button class="arcade-play" data-game="Hockey Rumble">▶ PLAY</button>
+                </div>
+                <div class="arcade-card" data-category="new">
+                    <div class="arcade-icon">✨</div>
+                    <div class="arcade-name">Northern Lights</div>
+                    <div class="arcade-stats">
+                        <span>👥 3,204</span>
+                        <span>💎 +80</span>
+                    </div>
+                    <button class="arcade-play" data-game="Northern Lights">▶ PLAY</button>
+                </div>
+                <div class="arcade-card" data-category="hot">
+                    <div class="arcade-icon">🌲</div>
+                    <div class="arcade-name">Timber Tumble</div>
+                    <div class="arcade-stats">
+                        <span>👥 987</span>
+                        <span>💎 +30</span>
+                    </div>
+                    <button class="arcade-play" data-game="Timber Tumble">▶ PLAY</button>
+                </div>
+                <div class="arcade-card" data-category="new">
+                    <div class="arcade-icon">🍟</div>
+                    <div class="arcade-name">Poutine Panic</div>
+                    <div class="arcade-stats">
+                        <span>👥 654</span>
+                        <span>💎 +35</span>
+                    </div>
+                    <button class="arcade-play" data-game="Poutine Panic">▶ PLAY</button>
+                </div>
+                <div class="arcade-card" data-category="hot">
+                    <div class="arcade-icon">🦌</div>
+                    <div class="arcade-name">Moose Mayhem</div>
+                    <div class="arcade-stats">
+                        <span>👥 1,432</span>
+                        <span>💎 +50</span>
+                    </div>
+                    <button class="arcade-play" data-game="Moose Mayhem">▶ PLAY</button>
+                </div>
+            </div>
+            <button class="view-all-arcade" id="viewAllArcade">🎲 SURPRISE ME 🎲</button>
+        </div>
+
+        <!-- LODGE TAB -->
+        <div class="tab-content" id="lodge-tab">
+            <div class="lodge-container">
+                <div class="lodge-left">
+                    <div class="lodge-header">🏔️ NORTHERN LODGE 🏔️</div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message"><span class="chat-user">🍁 MapleBot:</span> <span>Welcome to the Northern Lodge, eh!</span></div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="Type your message...">
+                        <button id="sendMessageBtn">📨 SEND</button>
+                    </div>
+                </div>
+                <div class="lodge-right">
+                    <div class="lodge-card">
+                        <div class="lodge-icon">🍁</div>
+                        <div class="lodge-title">MAPLE SUPPORTERS</div>
+                        <div class="lodge-count" id="supporterCount">1,284</div>
+                        <button class="lodge-join" id="joinSupporterBtn">BECOME A SUPPORTER</button>
+                    </div>
+                    <div class="lodge-card">
+                        <div class="lodge-icon">🏆</div>
+                        <div class="lodge-title">NORTHERN CUP</div>
+                        <div class="lodge-date">April 25 - May 2</div>
+                        <button class="lodge-join" id="registerCupBtn">REGISTER NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER С ССЫЛКАМИ НА ДРУГИЕ СТРАНИЦЫ -->
+    <footer class="northern-footer">
+        <div class="footer-links">
+            <a href="privacy.html">🛡️ PRIVACY POLICY</a>
+            <a href="terms.html">📜 TERMS OF USE</a>
+            <a href="cookies.html">🍪 COOKIE POLICY</a>
+            <a href="responsible-gaming.html">🎮 RESPONSIBLE GAMING</a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                <span>🍁 NORTHERN ARENA - MADE IN CANADA 🍁</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="northernToast" class="northern-toast"></div>
+    <div class="hypercube" id="hypercube">⬆️</div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
